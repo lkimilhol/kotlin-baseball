@@ -6,10 +6,10 @@ class NumberGenerator {
         const val NUMBER_SIZE = 3
     }
 
-    val result: Set<Number> = generateRand()
+    val result: List<Number> = generateRand()
 
-    private fun generateRand(): Set<Number> {
-        val numbers: MutableSet<Number> = mutableSetOf()
+    private fun generateRand(): List<Number> {
+        val numbers: MutableList<Number> = mutableListOf()
         while (numbers.size < NUMBER_SIZE) {
             val rand = (NUMBER_RANGE_MIN..NUMBER_RANGE_MAX).random()
             numbers.add(Number(rand))

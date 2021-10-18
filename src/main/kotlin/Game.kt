@@ -1,3 +1,12 @@
-class Game(val computerNumbers: Set<Int>, val userNumbers: Set<Int>) {
+class Game(private val computerNumbers: BaseballNumbers, private val userNumbers: BaseballNumbers) {
+    private val match : Int
 
+    init {
+        match = 0
+    }
+
+    fun match() {
+        when(match) {
+        }
+    }
 }

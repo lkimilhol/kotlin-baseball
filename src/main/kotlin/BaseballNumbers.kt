@@ -1,2 +1,2 @@
-class BaseballNumbers(val numbers: Set<Number>) {
+class BaseballNumbers(val numbers: List<Number>) {
 }
