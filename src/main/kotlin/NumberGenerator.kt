@@ -1,17 +1,18 @@
+import Number.Companion.NUMBER_RANGE_MAX
+import Number.Companion.NUMBER_RANGE_MIN
+
 class NumberGenerator {
     companion object {
         const val NUMBER_SIZE = 3
-        const val NUMBER_RANGE_MIN = 1
-        const val NUMBER_RANGE_MAX = 9
     }
 
-    val numbers: Set<Int> = generateRand()
+    val numbers: Set<Number> = generateRand()
 
-    private fun generateRand(): Set<Int> {
-        val numbers: MutableSet<Int> = mutableSetOf()
+    private fun generateRand(): Set<Number> {
+        val numbers: MutableSet<Number> = mutableSetOf()
         while (numbers.size < NUMBER_SIZE) {
             val rand = (NUMBER_RANGE_MIN..NUMBER_RANGE_MAX).random()
-            numbers.add(rand)
+            numbers.add(Number(rand))
         }
         return numbers
     }
