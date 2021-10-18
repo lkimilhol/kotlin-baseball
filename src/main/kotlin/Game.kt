@@ -1,12 +1,27 @@
-class Game(private val computerNumbers: BaseballNumbers, private val userNumbers: BaseballNumbers) {
-    private val match : Int
+import BaseballNumbers.Companion.NUMBER_SIZE
 
-    init {
-        match = 0
+class Game() {
+    var strike = 0
+    var ball = 0
+
+    fun play(computer: BaseballNumbers, user: BaseballNumbers) {
+        for (i in 0 until NUMBER_SIZE) {
+            if (matchStrike(computer.numbers[i], user.numbers[i])) {
+                strike++
+                continue
+            }
+
+            if (matchBall(computer, user.numbers[i])) {
+                ball++
+            }
+        }
     }
 
-    fun match() {
-        when(match) {
-        }
+    private fun matchStrike(computerNumber: Number, userNumber: Number): Boolean {
+        return computerNumber == userNumber
+    }
+
+    private fun matchBall(computer: BaseballNumbers, userNumber: Number): Boolean {
+        return computer.numbers.contains(userNumber)
     }
 }
