@@ -1,3 +1,2 @@
-class User (val numbers: Set<Int>){
-    
+class User (val baseballNumbers: BaseballNumbers){
 }

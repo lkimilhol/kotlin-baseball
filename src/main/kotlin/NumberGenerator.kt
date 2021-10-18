@@ -6,7 +6,7 @@ class NumberGenerator {
         const val NUMBER_SIZE = 3
     }
 
-    val numbers: Set<Number> = generateRand()
+    val result: Set<Number> = generateRand()
 
     private fun generateRand(): Set<Number> {
         val numbers: MutableSet<Number> = mutableSetOf()
