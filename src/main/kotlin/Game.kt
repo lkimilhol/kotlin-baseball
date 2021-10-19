@@ -5,26 +5,32 @@ class Game() {
     var ball = 0
 
     fun play(computer: BaseballNumbers, user: BaseballNumbers) {
+        init()
         for (index in 0 until NUMBER_SIZE) {
             match(computer, user, index)
         }
     }
 
+    private fun init() {
+        strike = 0
+        ball = 0
+    }
+
     private fun match(computer: BaseballNumbers, user: BaseballNumbers, index: Int) {
-        if (matchStrike(computer.numbers[index], user.numbers[index])) {
+        if (matchStrike(computer.baseballNumbers[index], user.baseballNumbers[index])) {
             strike++
             return
         }
-        if (matchBall(computer, user.numbers[index])) {
+        if (matchBall(computer, user.baseballNumbers[index])) {
             ball++
         }
     }
 
-    private fun matchStrike(computerNumber: Number, userNumber: Number): Boolean {
-        return computerNumber == userNumber
+    private fun matchStrike(computerBaseballNumber: BaseballNumber, userBaseballNumber: BaseballNumber): Boolean {
+        return computerBaseballNumber == userBaseballNumber
     }
 
-    private fun matchBall(computer: BaseballNumbers, userNumber: Number): Boolean {
-        return computer.numbers.contains(userNumber)
+    private fun matchBall(computer: BaseballNumbers, userBaseballNumber: BaseballNumber): Boolean {
+        return computer.baseballNumbers.contains(userBaseballNumber)
     }
 }

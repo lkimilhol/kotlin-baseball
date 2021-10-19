@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class NumberGeneratorTest {
+internal class BaseballNumberGeneratorTest {
     @Test fun `생성`() {
         val game = NumberGenerator()
         assertEquals(game.result.size, 3)

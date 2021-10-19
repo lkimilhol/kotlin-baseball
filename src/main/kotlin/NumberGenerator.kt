@@ -1,16 +1,16 @@
 import BaseballNumbers.Companion.NUMBER_SIZE
-import Number.Companion.NUMBER_RANGE_MAX
-import Number.Companion.NUMBER_RANGE_MIN
+import BaseballNumber.Companion.NUMBER_RANGE_MAX
+import BaseballNumber.Companion.NUMBER_RANGE_MIN
 
 class NumberGenerator {
-    val result: List<Number> = generateRand()
+    val result: List<BaseballNumber> = generateRand()
 
-    private fun generateRand(): List<Number> {
-        val numbers: MutableList<Number> = mutableListOf()
-        while (numbers.size < NUMBER_SIZE) {
-            val rand = Number((NUMBER_RANGE_MIN..NUMBER_RANGE_MAX).random())
-            if (numbers.contains(rand)) continue else numbers.add(rand)
+    private fun generateRand(): List<BaseballNumber> {
+        val baseballNumbers: MutableList<BaseballNumber> = mutableListOf()
+        while (baseballNumbers.size < NUMBER_SIZE) {
+            val rand = BaseballNumber((NUMBER_RANGE_MIN..NUMBER_RANGE_MAX).random())
+            if (baseballNumbers.contains(rand)) continue else baseballNumbers.add(rand)
         }
-        return numbers
+        return baseballNumbers
     }
 }

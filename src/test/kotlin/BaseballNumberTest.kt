@@ -1,10 +1,10 @@
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFailsWith
 
-internal class NumberTest {
+internal class BaseballNumberTest {
     @Test fun `생성_실패_number_음수`() {
         assertFailsWith<IllegalArgumentException> {
-            Number(-1)
+            BaseballNumber(-1)
         }
     }
 }
