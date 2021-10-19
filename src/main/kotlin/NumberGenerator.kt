@@ -9,7 +9,7 @@ class NumberGenerator {
         val numbers: MutableList<Number> = mutableListOf()
         while (numbers.size < NUMBER_SIZE) {
             val rand = Number((NUMBER_RANGE_MIN..NUMBER_RANGE_MAX).random())
-            if (result.contains(rand)) continue else numbers.add(rand)
+            if (numbers.contains(rand)) continue else numbers.add(rand)
         }
         return numbers
     }

@@ -5,15 +5,18 @@ class Game() {
     var ball = 0
 
     fun play(computer: BaseballNumbers, user: BaseballNumbers) {
-        for (i in 0 until NUMBER_SIZE) {
-            if (matchStrike(computer.numbers[i], user.numbers[i])) {
-                strike++
-                continue
-            }
+        for (index in 0 until NUMBER_SIZE) {
+            match(computer, user, index)
+        }
+    }
 
-            if (matchBall(computer, user.numbers[i])) {
-                ball++
-            }
+    private fun match(computer: BaseballNumbers, user: BaseballNumbers, index: Int) {
+        if (matchStrike(computer.numbers[index], user.numbers[index])) {
+            strike++
+            return
+        }
+        if (matchBall(computer, user.numbers[index])) {
+            ball++
         }
     }
 
