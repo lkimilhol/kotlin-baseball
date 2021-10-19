@@ -3,9 +3,13 @@ import BaseballNumber.Companion.NUMBER_RANGE_MAX
 import BaseballNumber.Companion.NUMBER_RANGE_MIN
 
 class NumberGenerator {
-    val result: String = generateRand()
+    var result: String
 
-    private fun generateRand(): String {
+    init {
+        result = generateRand()
+    }
+
+    fun generateRand(): String {
         val baseballNumbers: MutableList<Int> = mutableListOf()
         var numberToString = ""
         while (baseballNumbers.size < NUMBER_SIZE) {
@@ -15,6 +19,7 @@ class NumberGenerator {
                 numberToString += rand
             }
         }
+        result = numberToString
         return numberToString
     }
 }

@@ -4,11 +4,19 @@ class Game() {
     var strike = 0
     var ball = 0
 
+    companion object {
+        const val ANSWER_COUNT = 3
+    }
+
     fun play(computer: BaseballNumbers, user: BaseballNumbers) {
         init()
         for (index in 0 until NUMBER_SIZE) {
             match(computer, user, index)
         }
+    }
+
+    fun isAnswer(): Boolean{
+        return strike == ANSWER_COUNT
     }
 
     private fun init() {
