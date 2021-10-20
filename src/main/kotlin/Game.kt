@@ -1,12 +1,8 @@
 import BaseballNumbers.Companion.NUMBER_SIZE
 
 class Game() {
-    var strike = 0
-    var ball = 0
-
-    companion object {
-        const val ANSWER_COUNT = 3
-    }
+    private var strike = 0
+    private var ball = 0
 
     fun play(computer: BaseballNumbers, user: BaseballNumbers) {
         init()
@@ -15,9 +11,7 @@ class Game() {
         }
     }
 
-    fun isAnswer(): Boolean{
-        return strike == ANSWER_COUNT
-    }
+    fun isAnswer(): Boolean = strike == ANSWER_COUNT
 
     private fun init() {
         strike = 0
@@ -40,5 +34,9 @@ class Game() {
 
     private fun matchBall(computer: BaseballNumbers, userBaseballNumber: BaseballNumber): Boolean {
         return computer.baseballNumbers.contains(userBaseballNumber)
+    }
+
+    companion object {
+        const val ANSWER_COUNT = 3
     }
 }
