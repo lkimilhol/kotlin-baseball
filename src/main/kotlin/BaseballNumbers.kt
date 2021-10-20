@@ -1,5 +1,3 @@
-import java.lang.IllegalArgumentException
-
 class BaseballNumbers(strNumbers: String) {
 
     val baseballNumbers: List<BaseballNumber>
@@ -15,11 +13,7 @@ class BaseballNumbers(strNumbers: String) {
     }
 
     private fun validate(strNumber: String) {
-        if (strNumber.length != NUMBER_SIZE) {
-            throw IllegalArgumentException()
-        }
-        if (!strNumber.matches(REGEX)) {
-            throw IllegalArgumentException()
-        }
+        require(strNumber.length == NUMBER_SIZE)
+        require(strNumber.matches(REGEX))
     }
 }
