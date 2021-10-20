@@ -1,8 +1,8 @@
 import BaseballNumbers.Companion.NUMBER_SIZE
 
-class Game() {
-    private var strike = 0
-    private var ball = 0
+class Game {
+    var strike = 0
+    var ball = 0
 
     fun play(computer: BaseballNumbers, user: BaseballNumbers) {
         init()
