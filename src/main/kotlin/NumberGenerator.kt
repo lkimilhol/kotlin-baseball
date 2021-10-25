@@ -16,7 +16,7 @@ class NumberGenerator {
     }
 
     private fun addNumber(baseballNumbers: MutableList<Int>, rand: Int): String {
-        if (!baseballNumbers.contains(rand)) {
+        if (rand !in baseballNumbers) {
             baseballNumbers.add(rand)
             return rand.toString()
         }
